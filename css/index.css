@@ -68,8 +68,38 @@ p {
 
 .container {
     width: 800px;
-    margin: 0 auto;
+    margin: 2% auto 0 auto;
 }
+
+/* NAV */
+    #home nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 20%;
+    }
+
+    #home nav ul {
+        display:flex;
+        justify-content: space-around;
+        flex:1;
+    }
+
+    #home nav ul li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    #home nav ul li a:hover{
+        text-decoration: underline;
+        color: black;
+    }
+
+    #home .headerimage {
+        margin: 5% 0; 
+    }
+
+/* NAV FINISH */
 
 .top-content {
     display: flex;
@@ -104,13 +134,46 @@ p {
 .middle-content .boxes .box {
     width: 12.5%;
     height: 100px;
-    background: black;
     margin: 20px 2.5%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* BOXES COLOR */
+.box1 {
+    background: teal;
+}
+.box2 {
+    background: gold;
+}
+.box3 {
+    background: cadetblue;
+}
+.box4 {
+    background: coral;
+}
+.box5 {
+    background: crimson;
+}
+.box6 {
+    background: forestgreen;
+}
+.box7 {
+    background: darkorchid;
+}
+.box8 {
+    background: hotpink;
+}
+.box9 {
+    background: indigo;
+}
+.box10 {
+    background: dodgerblue;
+}
+
+/* BOXES COLOR END */
 
 .bottom-content {
     display: flex;
