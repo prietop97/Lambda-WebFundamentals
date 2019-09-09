@@ -191,8 +191,12 @@ header nav a:hover {
 
 .cta {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin: 5rem 0;
+}
+
+.cta img {
+  width: 40%;
 }
 
 .cta .cta-text {
@@ -261,16 +265,23 @@ footer {
   .container {
     width: 95%;
   }
-
+  /* HEADER NAV*/
   header {
     flex-direction: column-reverse;
     height: 10vh;
   }
   header nav {
-    display: flex;
     width: 100%;
-    justify-content: space-between;
+  }
+
+  /* HEADER */
+  .cta {
+    justify-content: center;
+  }
+  .cta img {
+    display: none;
+  }
+  .text-content {
+    margin: 0 1rem;
   }
 }
-
-/* NEED TO FIX HEADER IN COMPUTER WIDTH */
