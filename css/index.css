@@ -150,16 +150,16 @@ h5 {
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
 
 .container {
-  width: 880px;
+  width: 80%;
   /* TB LR */
   margin: 0 auto;
 }
 
 .btn {
-    margin-top: 0.8rem;
-	padding: 0.5rem 4rem;
-    border: 1px black solid;
-    cursor: pointer;
+  margin-top: 0.8rem;
+  padding: 0.5rem 4rem;
+  border: 1px black solid;
+  cursor: pointer;
 }
 
 /* header */
@@ -235,13 +235,18 @@ header nav a:hover {
   width: 32%;
 }
 
+.main-content img {
+  width: 100%;
+  height: 14vh;
+}
+
 /* CONTACT */
 
 .contact {
   margin: 2.5rem 0;
   display: flex;
   height: 9rem;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -251,3 +256,21 @@ footer {
   font-size: 0.9rem;
 }
 
+/* MEDIA */
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 95%;
+  }
+
+  header {
+    flex-direction: column-reverse;
+    height: 10vh;
+  }
+  header nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* NEED TO FIX HEADER IN COMPUTER WIDTH */
