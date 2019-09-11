@@ -153,6 +153,12 @@ body {
   align-items: center;
 }
 
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+}
+
+
 // GLOBAL SELECTORS
 h1,
 h2,
@@ -204,4 +210,40 @@ header {
   }
 }
 
-
+#main-content {
+	margin-top: 1rem;
+	margin-left: 1rem;
+	display: flex;
+	#contact {
+		.flexColumn();
+		h3{
+			background-color: @mainColor;
+			text-align: start;
+			color: white;
+			padding: 0.5rem 0;
+			padding-left: 0.7rem;
+			border-radius: 7px;
+			margin: 1rem 0;
+		}
+		.list {
+			display: flex;
+			ul{
+				margin: 0 0.3rem;
+				line-height: 1.3;
+				li{
+					a{
+						text-decoration: none;
+						color: #333;
+					}
+				}
+			}
+		}
+		.links{
+			.flex();
+			margin-top: 0.5rem;
+			i{
+				color: @mainColor; 
+			}
+		}
+	}
+}
