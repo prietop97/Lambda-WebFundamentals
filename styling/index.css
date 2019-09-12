@@ -261,4 +261,19 @@ header nav div {
   width: 100%;
   height: 40%;
   color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.section2 h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 2;
+}
+.section2 div {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  line-height: 1.3;
 }
