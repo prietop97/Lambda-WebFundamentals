@@ -86,13 +86,20 @@ console.log(lastCar.car_make, lastCar.car_model);
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 let carModels = [];
 let carModelsSorted = [];
-carModels = inventory.map(models => models.car_model); 
-carModelsSorted = carModels.sort();
-console.log(carModelsSorted);
+// for (let i = 0; i < inventory.length; i++){
+//   carModels.push(inventory[i].car_model);
+// };
+
+ carModels = inventory.map(models => models.car_model); 
+ carModelsSorted = carModels.sort();
+ console.log(carModelsSorted);
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 let carYears = [];
+// for (let i = 0; i < inventory.length; i++){
+//   carYears.push(inventory[i].car_year);
+// }
 carYears = inventory.map(years => years.car_year);
 console.log(carYears);
 
@@ -101,17 +108,29 @@ console.log(carYears);
 let oldCars = [];
 oldCars = inventory.filter(oldCar => {
   if(oldCar.car_year < 2000){
-    return true;
-  }
-})
+     return true;
+   };
+ });
+// for(let i = 0; i < carYears.length; i++){
+//   if(carYears[i] < 2000){
+//     oldCars.push(carYears[i]);
+//   };
+// };
+
 console.log(oldCars.length);
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 let BMWAndAudi = [];
 BMWAndAudi = inventory.filter(expensive => {
-  if(expensive.car_make === "BMW" || expensive.car_make === "Audi"){
+ if(expensive.car_make === "BMW" || expensive.car_make === "Audi"){
     return true;
-  }
-})
+  };
+});
+
+// for(let i=0; i < inventory.length; i++){
+//   if(inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi"){
+//     BMWAndAudi.push(inventory[i]);
+//   };
+// };
 console.log(JSON.stringify(BMWAndAudi));
