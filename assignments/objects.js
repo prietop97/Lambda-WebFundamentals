@@ -80,18 +80,19 @@ const parent = {
   },
 };
 // RETURN TO THIS LATER
- parent.speak = function() {
-   return `${this.name} is my name`;
- };
- parent.child.speak = function() {
-  return `${this.name} is my name`;
-};
-parent.child.grandchild.speak = function() {
-  return `${this.name} is my name`;
-};
-// //parent.speak();
-// console.log(parent);
+// parent.speak = function() {
+//    return `${this.name} is my name`;
+//  };
+// parent.child.speak = function() {
+//   return `${this.name} is my name`;
+// };
+// parent.child.grandchild.speak = function() {
+//   return `${this.name} is my name`;
+// };
 
+parent.speak = function() {
+  return `${this.name} is my name`;
+};
 
 // Log the parent object's name
 console.log(parent.name);
@@ -102,6 +103,6 @@ console.log(parent.child.grandchild.name, parent.child.grandchild.age);
 // Have the parent speak
 console.log(parent.speak());
 // Have the child speak
-console.log(parent.child.speak());
+console.log(parent.speak.call(parent.child));
 // Have the grandchild speak
-console.log(parent.child.grandchild.speak());
+console.log(parent.speak.call(parent.child.grandchild));
