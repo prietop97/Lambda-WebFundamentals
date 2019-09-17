@@ -78,7 +78,7 @@ function multiplyNums(x, y, cb) {
   return cb(x , y);
 }
 let multiply = (x,y) => x*y;
-console.log(multiplyNums(2,3,multiply))   // ANSWER
+// console.log(multiplyNums(2,3,multiply))   // ANSWER
 
 
 
@@ -86,7 +86,17 @@ console.log(multiplyNums(2,3,multiply))   // ANSWER
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+    return cb(item, list);
 }
+let check = function(item, list){
+  if(list.includes(item)){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// console.log(contains('Notebook', items, check));      // ANSWER
 
 /* STRETCH PROBLEM */
 
