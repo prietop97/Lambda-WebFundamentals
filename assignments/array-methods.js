@@ -86,10 +86,14 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 let highDonation = runners.filter(value => value.donation >= 200);
+let lowDonation = runners.filter(value => value.donation < 200);
 
 // Problem 2
-highDonation.forEach(value => value.extraShirts === 2);
-console.log(highDonation)
+highDonation.forEach(value => value.extraShirts = "Yes");
+lowDonation.forEach(value => value.extraShirts = "No");
 
 
 // Problem 3
+let isStudent = runners.filter(value =>{ if(value.email.includes(".edu")){return true}});
+isStudent.forEach(value => value.studentDiscount = "20% Off");
+console.log(isStudent);
