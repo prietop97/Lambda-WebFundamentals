@@ -5,6 +5,24 @@
 // The outer scope can be a parent function, or the top level of the script.
 
 
+function rollADice(){
+  let dice = Math.ceil(Math.random()*6);
+  let level = 0;
+  function levelUp(){
+    if(dice === 3){
+      return level = level + 1;
+    };
+  };
+  levelUp();
+  console.log(dice);
+  console.log(level);
+}
+
+
+rollADice();
+
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
