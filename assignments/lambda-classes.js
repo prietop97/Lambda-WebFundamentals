@@ -25,18 +25,23 @@ class Instructor extends Person {
     grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`;
     }
+    gradeModification(student, ){
+        student.grade = Math.floor((student.grade * Math.random()));
+        return student.grade;
+    }
 };
 
 class Student extends Person {
-    constructor(name,age,location,previousBackground,className,favSubjects){
+    constructor(name,age,location,previousBackground,className,favSubjects,grade){
         super(name,age,location);
         this.previousBackground = previousBackground;
         this.className = className;
         this.favSubjects = favSubjects;
+        this.grade = grade;
     }
     listsSubjects(){
-        return this.favSubjects.forEach(element => {
-            console.log(element);
+        return this.favSubjects.forEach(function(element) {
+           console.log(element);
         });
     }
     PRAssignment(subject){
@@ -44,6 +49,14 @@ class Student extends Person {
     }
     sprintChallenge(subject){
         return `${this.name} has begun sprint challenge on ${subject}`
+    }
+    graduate(){
+        let needingPoints = 70 - this.grade;
+        if(this.grade >= 70){
+            return `CONGRATULATIONS YOU GRADUATED WITH ${this.grade}`;
+        }else{
+            return `SORRY YOU CAN'T GRADUATE YET, INCREASE YOUR GRADE BY ${needingPoints}`;
+        }
     }
 };
 
@@ -62,7 +75,7 @@ class ProjectManagers extends Instructor {
 };
 
 let instructor1 = new Instructor("Josh",30,"Miami","Loops","Javascript","Hello All");
-let student1 = new Student("Pedro",21,"Miami","Nothing here","Web24",["Javascript!","Python", "React"]);
+let student1 = new Student("Pedro",21,"Miami","Nothing here","Web24",["Javascript!","Python", "React"], 90);
 let pm1 = new ProjectManagers("Mike",27,"New York","High array methods","Python","Good Morning you all", "Web24", "Brit");
 
 // console.log(instructor1)
@@ -75,20 +88,25 @@ let pm1 = new ProjectManagers("Mike",27,"New York","High array methods","Python"
 // console.log(student1)
 // console.log(student1.name);
 // console.log(student1.PRAssignment("Javascript4"));
-// student1.listsSubjects();
+// console.log(student1.listsSubjects());
 // console.log(student1.sprintChallenge("Front End"));
 
 
-console.log(pm1);
-console.log(pm1.name);
-console.log(pm1.standUp("Web 24 Lecture"));
-console.log(pm1.debugsCode(student1, "REACT FUNDEMENTALS"));
-console.log(pm1.speak());
+// console.log(pm1);
+// console.log(pm1.name);
+// console.log(pm1.standUp("Web 24 Lecture"));
+// console.log(pm1.debugsCode(student1, "REACT FUNDEMENTALS"));
+// console.log(pm1.speak());
 
 
 
 
+////////////////////////////// STRETCH //////////////////////////
+// console.log(student1.grade) /// PROBLEM1
 
+console.log(instructor1.gradeModification(student1));
+console.log(student1.grade)
+console.log(student1.graduate())
 
 
 
