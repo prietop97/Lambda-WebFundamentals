@@ -53,9 +53,9 @@ class Student extends Person {
     graduate(){
         let needingPoints = 70 - this.grade;
         if(this.grade >= 70){
-            return `CONGRATULATIONS YOU GRADUATED WITH ${this.grade}`;
+            return `CONGRATULATIONS YOU GRADUATED WITH ${this.grade}%`;
         }else{
-            return `SORRY YOU CAN'T GRADUATE YET, INCREASE YOUR GRADE BY ${needingPoints}`;
+            return `SORRY YOU CAN'T GRADUATE YET, INCREASE YOUR GRADE BY ${needingPoints}%`;
         }
     }
 };
@@ -75,7 +75,7 @@ class ProjectManagers extends Instructor {
 };
 
 let instructor1 = new Instructor("Josh",30,"Miami","Loops","Javascript","Hello All");
-let student1 = new Student("Pedro",21,"Miami","Nothing here","Web24",["Javascript!","Python", "React"], 90);
+let student1 = new Student("Pedro",21,"Miami","Nothing here","Web24",["Javascript!","Python", "React"], 100);
 let pm1 = new ProjectManagers("Mike",27,"New York","High array methods","Python","Good Morning you all", "Web24", "Brit");
 
 // console.log(instructor1)
@@ -104,9 +104,9 @@ let pm1 = new ProjectManagers("Mike",27,"New York","High array methods","Python"
 ////////////////////////////// STRETCH //////////////////////////
 // console.log(student1.grade) /// PROBLEM1
 
-console.log(instructor1.gradeModification(student1));
-console.log(student1.grade)
-console.log(student1.graduate())
+console.log(instructor1.gradeModification(student1)); ///PROBLEM2
+console.log(student1.grade); 
+console.log(student1.graduate());
 
 
 
