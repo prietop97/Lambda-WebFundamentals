@@ -29,15 +29,18 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead
 
 1. Describe the biggest difference between `.forEach` & `.map`.
-
+    Biggest difference is that `.map` will return a new array while forEach just runs a function in all the elements in the array without creating a new array, map is better used if you want to modify something in an array while forEach is better used if you don't want to change any data in the array but instead just do something with it like console logging it or send all the data to a database, etc.
 2. What is the difference between a function and a method?
-
+    A method is a function that belongs to an object.
 3. What is closure?
-
+    A closure is when a nested function can access data like variables from a parent function or the global scope, that might be useful because that way everytime the parent function runs, the data can keep changing and storing new data everytime it runs, like the inner function can modify a global variable, and if you run the function again the new value of the variable will be whatevever it was the last time it was modified.
 4. Describe the four rules of the 'this' keyword.
-
+    1-Global .this (If a function is contained in the global scope the value of this inside that function will be the window object);
+    2-when a function is called after a `.` the object before that dot is `.this`
+    3-When you use the new keyword using a constructor function or call, this will refer to the new object
+    4-when you use call, apply or bind, the `.this` will refer to the object you pass in as the argument of the call apply or bind method.
 5. Why do we need super() in an extended class?
-
+    Because super will make the child inherit all methods from the parent and will also inherit the values, like if they both contain this.name = name; you wont have to type that again.
 ## Project Set up
 
 Follow these steps to set up and work on your project:
