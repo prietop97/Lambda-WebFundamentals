@@ -46,6 +46,17 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // console.log(siteContentArray);
 
 ///// NAV /////      //LOOP TRU AND SEE IF I CAN GET THEM DONE DYNAMIC
+function newLink(link, redirect){
+  let navElement = document.querySelector("nav");
+  let nlink = document.createElement("a");
+  nlink.textContent = link;
+  nlink.href = redirect;
+  navElement.appendChild(nlink);
+}
+
+newLink("Google","http://google.com");
+newLink("Facebook","http://facebook.com");
+
 let nav = document.querySelectorAll("a");
 nav[0].textContent = siteContent["nav"]["nav-item-1"];
 nav[1].textContent = siteContent["nav"]["nav-item-2"];
@@ -54,10 +65,12 @@ nav[3].textContent = siteContent["nav"]["nav-item-4"];
 nav[4].textContent = siteContent["nav"]["nav-item-5"];
 nav[5].textContent = siteContent["nav"]["nav-item-6"];
 
+
+nav.forEach(link=>link.style.color = "green");
 ///// cta /////     //GRAB PARENT AND SELECT CHILDS MAYBE
 document.querySelector("h1").textContent = siteContent["cta"]["h1"];
 document.querySelector("button").textContent = siteContent["cta"]["button"];
-document.querySelector(".cta img").src = siteContent["cta"]["img-src"];
+document.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
 
 //// MAIN-CONTENT ////
 document.querySelector(".top-content .text-content h4").textContent = siteContent["main-content"]["features-h4"];
@@ -66,7 +79,7 @@ document.querySelector(".top-content .text-content p").textContent = siteContent
 document.querySelector(".top-content .text-content:last-child h4").textContent = siteContent["main-content"]["about-h4"];
 document.querySelector(".top-content .text-content:last-child p").textContent = siteContent["main-content"]["about-content"];
 
-document.querySelector(".main-content img").src = siteContent["main-content"]["middle-img-src"];
+document.querySelector("#middle-img").src = siteContent["main-content"]["middle-img-src"];
 
 document.querySelector(".bottom-content .text-content h4").textContent = siteContent["main-content"]["services-h4"];
 document.querySelector(".bottom-content .text-content p").textContent = siteContent["main-content"]["services-content"];
