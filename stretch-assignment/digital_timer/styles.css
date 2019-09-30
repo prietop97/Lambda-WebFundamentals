@@ -1,4 +1,4 @@
-body {
+.digits{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,4 +11,18 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.btncontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  padding: 1rem 3rem;
+  margin: 1rem;
+  border: none;
+  color: white;
+  background: #333;
 }
