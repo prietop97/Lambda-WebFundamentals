@@ -20,11 +20,14 @@ let reset = document.querySelector(".reset")
 //     return time;
 // }
 
+secondTens.textContent = 0;
+secondOnes.textContent = 0;
+msHundreds.textContent = 0;
+msTens.textContent = 0;
+
+
+
 function startOnClick(){
-    secondTens.textContent = 0;
-    secondOnes.textContent = 0;
-    msHundreds.textContent = 0;
-    msTens.textContent = 0;
     let counter = setInterval(function(){
         msTens.textContent = Number(msTens.textContent) + 1;
         if(msTens.textContent == 10){
@@ -41,8 +44,7 @@ function startOnClick(){
                 wholeDigits.classList.add("redDigit");
             }
         };
-},10);
-    return counter;
+    },10);
 }
 
 
@@ -52,4 +54,5 @@ reset.addEventListener("click", function(e){
     secondOnes.textContent = 0;
     msHundreds.textContent = 0;
     msTens.textContent = 0;
+    wholeDigits.classList.remove("redDigit");
 })
