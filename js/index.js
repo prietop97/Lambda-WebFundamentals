@@ -40,3 +40,56 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//////////////////// MY WORK ///////////////////
+// const siteContentArray = Object.keys(siteContent).map(i=> siteContent[i]);
+// console.log(siteContentArray);
+
+///// NAV /////      //LOOP TRU AND SEE IF I CAN GET THEM DONE DYNAMIC
+let nav = document.querySelectorAll("a");
+nav[0].textContent = siteContent["nav"]["nav-item-1"];
+nav[1].textContent = siteContent["nav"]["nav-item-2"];
+nav[2].textContent = siteContent["nav"]["nav-item-3"];
+nav[3].textContent = siteContent["nav"]["nav-item-4"];
+nav[4].textContent = siteContent["nav"]["nav-item-5"];
+nav[5].textContent = siteContent["nav"]["nav-item-6"];
+
+///// cta /////     //GRAB PARENT AND SELECT CHILDS MAYBE
+document.querySelector("h1").textContent = siteContent["cta"]["h1"];
+document.querySelector("button").textContent = siteContent["cta"]["button"];
+document.querySelector(".cta img").src = siteContent["cta"]["img-src"];
+
+//// MAIN-CONTENT ////
+document.querySelector(".top-content .text-content h4").textContent = siteContent["main-content"]["features-h4"];
+document.querySelector(".top-content .text-content p").textContent = siteContent["main-content"]["features-content"];
+
+document.querySelector(".top-content .text-content:last-child h4").textContent = siteContent["main-content"]["about-h4"];
+document.querySelector(".top-content .text-content:last-child p").textContent = siteContent["main-content"]["about-content"];
+
+document.querySelector(".main-content img").src = siteContent["main-content"]["middle-img-src"];
+
+document.querySelector(".bottom-content .text-content h4").textContent = siteContent["main-content"]["services-h4"];
+document.querySelector(".bottom-content .text-content p").textContent = siteContent["main-content"]["services-content"];
+
+document.querySelector(".bottom-content .text-content:nth-child(2) h4").textContent = siteContent["main-content"]["product-h4"];
+document.querySelector(".bottom-content .text-content:nth-child(2) p").textContent = siteContent["main-content"]["product-content"];
+
+document.querySelector(".bottom-content .text-content:last-child h4").textContent = siteContent["main-content"]["vision-h4"];
+document.querySelector(".bottom-content .text-content:last-child p").textContent = siteContent["main-content"]["vision-content"];
+
+
+document.querySelector(".contact h4").textContent = siteContent["contact"]["contact-h4"];
+let contactInfo = document.querySelectorAll(".contact p");
+contactInfo[0].textContent = siteContent["contact"]["address"];
+contactInfo[1].textContent = siteContent["contact"]["phone"];
+contactInfo[2].textContent = siteContent["contact"]["email"];
+
+
+
+
+
+
+
+
+
+
