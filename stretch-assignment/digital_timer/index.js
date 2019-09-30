@@ -6,19 +6,23 @@ let colon = document.querySelector("#colon");
 let msHundreds = document.querySelector("#msHundreds");
 let msTens = document.querySelector("#msTens");
 
-let start = document.querySelector(".start");
-let reset = document.querySelector(".reset")
+// let start = document.querySelector(".start");
+// let reset = document.querySelector(".reset")
 
 
-// secondTens.textContent = 0;
-// secondOnes.textContent = 0;
-// msHundreds.textContent = 0;
-// msTens.textContent = 0;
+let buttonContainer = document.createElement("div")
+let start = document.createElement("button");
+let reset = document.createElement("button");
 
-// let countUp = function(time) {
-//     time.textContent = Number(time.textContent) + 1;
-//     return time;
-// }
+start.classList.add("btn");
+start.textContent = "START"
+reset.classList.add("btn");
+reset.textContent = "RESET"
+buttonContainer.classList.add("btncontainer");
+document.querySelector("body").appendChild(buttonContainer);
+buttonContainer.appendChild(start);
+buttonContainer.appendChild(reset);
+
 
 secondTens.textContent = 0;
 secondOnes.textContent = 0;
@@ -29,6 +33,7 @@ msTens.textContent = 0;
 
 function startOnClick(){
     let counter = setInterval(function(){
+        start.style.pointerEvents = 'none';
         msTens.textContent = Number(msTens.textContent) + 1;
         if(msTens.textContent == 10){
             msTens.textContent = Number(msTens.textContent) - 10;
@@ -55,4 +60,5 @@ reset.addEventListener("click", function(e){
     msHundreds.textContent = 0;
     msTens.textContent = 0;
     wholeDigits.classList.remove("redDigit");
+    start.style.pointerEvents = 'auto';
 })
