@@ -180,23 +180,12 @@ data.forEach(x=>{
   myComp(x.title,x.date,x.firstParagraph,x.secondParagraph,x.thirdParagraph);
 });
 
+// let btnn = document.querySelector(".contactbtn");
+// btnn.addEventListener("click",function (e){
+//   let title = document.querySelector(".contact-form").value;
+//   console.log(title);
+// })
 
-{/* <section class="contact-section">
-<div class="form">
-    <h2>CONTACT US</h2>
-    <form action="contact.html" class="contact-form" method="post">
-        <input type="text" class="contact-form-text" placeholder="Your Name">
-        <input type="email" class="contact-form-text" placeholder="Your Email">
-        <input type="text" class="contact-form-text" placeholder="Your Phone Number">
-        <textarea class="contact-form-text" placeholder="Your Message"></textarea>
-        <button class="contactbtn">SEND</button>
-    </form>
-</div>
-</section> */}
-
-function ContactForm (){
-
-}
 
 
 
