@@ -91,22 +91,31 @@ let CreateACard = (obj)=> {
 
   return card;
 };
-
 let cardContainer = document.querySelector(".cards")
-// axios.get('https://api.github.com/users/prietop97')
-//   .then(response => {
-//     console.log(response.data)
-//     cardContainer.appendChild(CreateACard(response.data))
-//   })
-//   .catch(err => {
-//     console.log(err)
-//   })
+axios.get('https://api.github.com/users/prietop97')
+  .then(response => {
+    console.log(response.data)
+    cardContainer.appendChild(CreateACard(response.data))
+  })
+  .catch(err => {
+    console.log(err)
+  })
 
-  const followersArray = ['prietop97','tetondan','dustinmyers','justsml','luishrd','bigknell'];
+  axios.get("https://api.github.com/users/prietop97/followers")
+  .then(response=>{
+    response.data.forEach(user=>{
+    axios.get(`https://api.github.com/users/${user.login}`)
+    .then(response => {
+      console.log(response.data)
+      cardContainer.appendChild(CreateACard(response.data))
+      })
+    })
+  })
+  const followersArray = ['tetondan','dustinmyers','justsml','luishrd','bigknell'];
   followersArray.forEach(value=>{
     axios.get(`https://api.github.com/users/${value}`)
   .then(response => {
-    console.log(response.data)
+    console.log(response)
     cardContainer.appendChild(CreateACard(response.data))
   })
   .catch(err => {
