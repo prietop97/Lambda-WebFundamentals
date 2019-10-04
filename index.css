@@ -70,6 +70,17 @@ body {
   align-items: center;
 }
 
+.newContainer{
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px -2px #000;
+  margin-bottom: 30px;
+}
+
 .header {
   width: 100%;
   display: flex;
@@ -95,8 +106,6 @@ body {
   width: 100%;
   padding: 20px;
   display: flex;
-  border-radius: 5px;
-  box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin-bottom: 30px;
 }
@@ -123,5 +132,18 @@ body {
   margin: 3px 0 10px;
 }
 
+.toggleOn{
+  display: block;
+}
 
+.toggleOff{
+  display: none;
+}
 
+.btn{
+  border: 2px #333 solid;
+  margin-bottom: 3rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}

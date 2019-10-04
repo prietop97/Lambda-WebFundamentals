@@ -47,6 +47,7 @@
 */
 let CreateACard = (obj)=> {
   /// CREATING ELEMENTS
+  let cardWith = document.createElement("div");
   let card = document.createElement("div");
   let img = document.createElement("img");
   let cardInfo = document.createElement("div");
@@ -58,12 +59,22 @@ let CreateACard = (obj)=> {
   let followers = document.createElement("p");
   let following = document.createElement("p");
   let bio = document.createElement("p");
+  let pullcontainer = document.createElement("div");
+  let btn = document.createElement("button");
+  let btnClose = document.createElement("button")
 
   //// ADDING CLASSES
-  card.classList.add("card");
+  card.classList.add("newContainer");
   cardInfo.classList.add("card-info");
   name.classList.add("name");
   username.classList.add("username");
+  cardWith.classList.add("card");
+  pullcontainer.style.width ="95%";
+  pullcontainer.classList.add("toggleOff");
+  btn.classList.add("btn");
+  btnClose.classList.add("btn");
+  btnClose.classList.add("toggleOff");
+
 
   //// GIVING CONTEXT
   img.src = obj.avatar_url;
@@ -76,10 +87,20 @@ let CreateACard = (obj)=> {
   followers.textContent = `Followers: ${obj.followers}`;
   following.textContent = `Following: ${obj.following}`;
   bio.textContent = obj.bio;
+  btn.textContent = "CHECK GITHUB COMMITS";
+  btnClose.textContent = "HIDE GITHUB COMMITS";
+  GitHubCalendar(pullcontainer, username.textContent, {
+    responsive: true
+  })
+
 
   /// APPENDING CHILDS
-  card.appendChild(img);
-  card.appendChild(cardInfo);
+  card.appendChild(cardWith);
+  card.appendChild(btn);
+  card.appendChild(pullcontainer);
+  card.appendChild(btnClose);
+  cardWith.appendChild(img);
+  cardWith.appendChild(cardInfo);
   cardInfo.appendChild(name);
   cardInfo.appendChild(username);
   cardInfo.appendChild(location);
@@ -88,6 +109,23 @@ let CreateACard = (obj)=> {
   cardInfo.appendChild(following);
   cardInfo.appendChild(bio);
   profile.appendChild(profileLink);
+
+
+
+  //// EVENTS
+  btn.addEventListener("click",(e)=>{
+    pullcontainer.classList.toggle("toggleOff");
+    btn.classList.toggle("toggleOff");
+    btnClose.classList.toggle("toggleOff");
+  })
+
+  btnClose.addEventListener("click",(e)=>{
+    pullcontainer.classList.toggle("toggleOff");
+    btn.classList.toggle("toggleOff");
+    btnClose.classList.toggle("toggleOff");
+  })
+
+
 
   return card;
 };
@@ -101,6 +139,9 @@ axios.get('https://api.github.com/users/prietop97')
     console.log(err)
   })
 
+
+
+  //folloowers dynamic
   axios.get("https://api.github.com/users/prietop97/followers")
   .then(response=>{
     response.data.forEach(user=>{
@@ -111,6 +152,9 @@ axios.get('https://api.github.com/users/prietop97')
       })
     })
   })
+
+
+  //array
   const followersArray = ['tetondan','dustinmyers','justsml','luishrd','bigknell'];
   followersArray.forEach(value=>{
     axios.get(`https://api.github.com/users/${value}`)
