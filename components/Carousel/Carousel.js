@@ -44,6 +44,7 @@ function CreateACarousel(){
   carousel.classList.add("carousel");
   leftBtn.classList.add("left-button");
   rightbtn.classList.add("right-button");
+  img1.classList.toggle("toggle");
 
 
   leftBtn.innerHTML = "<i class=\"fas fa-chevron-left\"></i>";
