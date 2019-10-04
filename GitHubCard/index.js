@@ -90,7 +90,7 @@ let CreateACard = (obj)=> {
   btn.textContent = "CHECK GITHUB COMMITS";
   btnClose.textContent = "HIDE GITHUB COMMITS";
   GitHubCalendar(pullcontainer, username.textContent, {
-    responsive: true
+    responsive: true,
   })
 
 
@@ -98,7 +98,7 @@ let CreateACard = (obj)=> {
   card.appendChild(cardWith);
   card.appendChild(btn);
   card.appendChild(pullcontainer);
-  card.appendChild(btnClose);
+
   cardWith.appendChild(img);
   cardWith.appendChild(cardInfo);
   cardInfo.appendChild(name);
@@ -124,6 +124,7 @@ let CreateACard = (obj)=> {
     btn.classList.toggle("toggleOff");
     btnClose.classList.toggle("toggleOff");
   })
+  card.appendChild(btnClose);
 
 
 
