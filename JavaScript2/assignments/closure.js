@@ -4,6 +4,42 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let level = 0;
+function rollADice(){
+  let dice = Math.ceil(Math.random()*6);
+  function levelUpandDown(){
+    if(dice === 6){
+      return level = level + 1;
+    }else if(dice === 1){
+      return level = level -1;
+    };
+  };
+  levelUpandDown();
+  if(level < 0){
+    return level = 0;
+  }
+  console.log(`Player rolled a ${dice}`);
+  console.log(`Player is now level ${level}`);
+}
+
+
+rollADice();    //ANSWER
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+rollADice();
+
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
