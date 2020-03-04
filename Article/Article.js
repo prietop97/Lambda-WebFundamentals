@@ -112,3 +112,82 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+let articles = document.querySelector(".articles")
+function myComp(title,date,p1,p2,p3){
+  let article = document.createElement("div");
+  let articleTitle = document.createElement("h2");
+  let articleDate = document.createElement("p");
+  let paragraph1 = document.createElement("p");
+  let paragraph2 = document.createElement("p");
+  let paragraph3 = document.createElement("p");
+  let btn = document.createElement("span");
+  article.classList.add("article");
+  articleDate.classList.add("date");
+  btn.classList.add("expandButton");
+  btn.innerHTML =`<i class="fab fa-readme"></i>`;
+  btn.addEventListener("click",(e)=>{
+    article.classList.toggle("article-open");
+  });
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(btn);
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paragraph1.textContent = p1;
+  paragraph2.textContent = p2;
+  paragraph3.textContent = p3;
+  articles.appendChild(article);
+  console.log(btn)
+  return article;
+}
+
+// data.forEach(x=>{
+//   document.body.append(myComp(x.title,x.date,x.firstParagraph,x.secondParagraph,x.thirdParagraph));
+// })
+
+function x(title,date,para1,para2,para3){
+  this.title = title;
+  this.date = date;
+  this.firstParagraph = para1;
+  this.secondParagraph =para2;
+  this.thirdParagraph=para3;
+  data.push(this)
+}
+
+let article1 = new x("WEEK 2 SUMMARY", "09-05-2019", "blablabla", "blablabla","blablabla");
+data.push({
+  title: 'Professional PROGRAMMING Development in 2019',
+  date: 'Jan 2st, 2019',
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+})
+
+data.forEach(x=>{
+  myComp(x.title,x.date,x.firstParagraph,x.secondParagraph,x.thirdParagraph);
+});
+
+// let btnn = document.querySelector(".contactbtn");
+// btnn.addEventListener("click",function (e){
+//   let title = document.querySelector(".contact-form").value;
+//   console.log(title);
+// })
+
+
+
+
+
+
